@@ -1,0 +1,3 @@
+
+class ApiConnection:
+    pass
