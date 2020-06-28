@@ -1,12 +1,15 @@
+"""SQL-python Helper"""
+
 
 import yaml
 import pandas as pd
 from sqlalchemy import create_engine
-import pymysql
-
 
 class SqlHelper:
-    """[summary]
+    """ Class para realizar tareas entre Python y SQL
+
+    Cuenta con conexión, lectura y escritura de bases de datos  
+
     """
 
     def __init__(self, credentials, engine = 'MySQL'):
