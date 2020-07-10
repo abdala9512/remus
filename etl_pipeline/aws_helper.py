@@ -18,7 +18,7 @@ class AwsHelper:
 
     def call_s3_data(self, bucket_name, file_name, download_name):
         if self.s3_connected:
-            self.Object(bucket_name=bucket_name, key=file_name).download_file(download_name)
+            self.s3_connection.Object(bucket_name=bucket_name, key=file_name).download_file(download_name)
         else:
             raise ConnectionError("Open S3 Connection before trying to get data!")
             
