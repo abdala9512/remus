@@ -12,5 +12,7 @@ class ApiConnection:
         self.api = api
 
     def spotify_connection(self, user):
-        pass
-    
+        if self.api == 'spotify':
+            pass
+        else:
+            raise ConnectionError("Change your API connection to Spotify!")
