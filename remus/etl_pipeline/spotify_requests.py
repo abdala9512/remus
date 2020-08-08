@@ -5,7 +5,6 @@ import requests
 
 from .api_connection import SpotifyAPIConnection
 
-
 class SpotifyRequest(SpotifyAPIConnection):
 
     BASE_ENDPOINT =  "https://api.spotify.com/v1/"
@@ -27,12 +26,14 @@ class SpotifyRequest(SpotifyAPIConnection):
             "Authorization": f"Bearer {self.access_token}"
         }
 
-        endpoint = BASE_ENDPOINT + "search"
+        endpoint = SpotifyRequest.BASE_ENDPOINT + "search"
         data = urlencode({"q": query, "type": type})
 
         lookup_URL = f"{endpoint}?{data}"
 
         r = requests.get(lookup_URL, headers=header)
+
+        return r.json()
 
 
 
