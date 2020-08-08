@@ -2,7 +2,7 @@
 
 import boto3
 
-class AwsHelper:
+class AWSHelper:
 
 
     def __init__(self):
@@ -22,8 +22,8 @@ class AwsHelper:
         else:
             raise ConnectionError("Open S3 Connection before trying to get data!")
             
-    def load_s3_data(self, bucket, file_name, upload_name):
+    def load_s3_data(self, bucket, file_name):
          if self.s3_connected:
-            self.Object(bucket_name=bucket_name, key=file_name).upload_file(upload_name)
+            self.s3_connection.Object(bucket_name=bucket, key=file_name).upload_file(file_name)
          else:
             raise ConnectionError("Open S3 Connection before trying to push data!")
