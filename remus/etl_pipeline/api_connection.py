@@ -12,7 +12,11 @@ class SpotifyAPIConnection:
     def __init__(self, client_id, secret): 
         self.client_id = client_id
         self.secret = secret
-        self.access_token = None
+        self._access_token = None
+
+    @property
+    def access_token():
+        return self._access_token
 
     def get_token(self):
         client_creds = f"{self.client_id}:{self.secret}"
@@ -29,5 +33,5 @@ class SpotifyAPIConnection:
         r = requests.post(TOKEN_URL, data=token_data, headers=token_header)
         if r.status_code not in range(200,299)
             return False
-        self.access_token =  r.json()['access_token']
+        self._access_token =  r.json()['access_token']
         return True
