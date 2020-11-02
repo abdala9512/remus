@@ -1,4 +1,8 @@
-
-
-
+venv
+*.pyc
+.DS_Store
 desktop.ini
+.env
+
+
+*_evaluation.py
