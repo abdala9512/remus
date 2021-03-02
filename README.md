@@ -1,6 +1,2 @@
 # remus
-Recommender System Pipeline
-
-## 
-
-Versión 1
+Music recommender System Pipeline
